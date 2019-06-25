@@ -18,7 +18,8 @@ export let dom = {
         return elementToExtend.lastChild;
     },
     init: function () {
-        // This function should run once, when the page is loaded.
+        let btn = document.getElementById('new_board');
+        btn.addEventListener('click', dataHandler.createNewBoard);
     },
     loadBoards: function () {
         // retrieves boards and makes showBoards called
@@ -39,7 +40,7 @@ export let dom = {
         }
 
         const outerHtml = `
-            <ul class="board-container">
+            <ul class="board-container" id="lool">
                 ${boardList}
             </ul>
         `;
