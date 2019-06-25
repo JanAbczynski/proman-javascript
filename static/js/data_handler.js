@@ -3,6 +3,10 @@
 
 // (watch out: when you would like to use a property/function of an object from the
 // object itself then you must use the 'this' keyword before. For example: 'this._data' below)
+import { dom } from "./dom.js";
+
+
+
 export let dataHandler = {
     _data: {}, // it contains the boards and their cards and statuses. It is not called from outside.
     _api_get: function (url, callback) {
@@ -21,6 +25,13 @@ export let dataHandler = {
         // sends the data to the API, and calls callback function
     },
     init: function () {
+        let data_div = document.getElementById('boards');
+        let list_data = data_div.getElementsByTagName('ul');
+        console.log(list_data);
+        for (let item of list_data) {
+        console.log('cos');}
+
+
     },
     getBoards: function (callback) {
         // the boards are retrieved and then the callback function is called with the boards
@@ -30,6 +41,7 @@ export let dataHandler = {
         this._api_get('/get-boards', (response) => {
             this._data = response;
             callback(response);
+            // console.log(response);
         });
     },
     getBoard: function (boardId, callback) {
@@ -49,9 +61,15 @@ export let dataHandler = {
     },
     createNewBoard: function (boardTitle, callback) {
         // creates new board, saves it and calls the callback function with its data
+        const outerHtml = `
+            <li>dupa</li>`;
+    dom._appendToElement(document.querySelector('#lool'), outerHtml);
+
+
     },
     createNewCard: function (cardTitle, boardId, statusId, callback) {
         // creates new card, saves it and calls the callback function with its data
     }
     // here comes more features
 };
+
