@@ -4,7 +4,9 @@ STATUSES_FILE = './data/statuses.csv'
 BOARDS_FILE = './data/boards.csv'
 CARDS_FILE = './data/cards.csv'
 
-_cache = {}  # We store cached data in this dict to avoid multiple file readings
+# We store cached data in this dict to avoid multiple file readings
+_cache = {}
+_cache_test = {1,2,3,4,5}
 
 
 def _read_csv(file_name):
@@ -31,6 +33,7 @@ def _get_data(data_type, file, force):
     """
     if force or data_type not in _cache:
         _cache[data_type] = _read_csv(file)
+    print(_cache)
     return _cache[data_type]
 
 
@@ -49,3 +52,10 @@ def get_boards(force=False):
 
 def get_cards(force=False):
     return _get_data('cards', CARDS_FILE, force)
+
+def save_file():
+    with open('data/card.csv', 'a') as datafile:
+        for datas in _cache:
+            print(datas)
+            # datafile.write(','.join(album) + '\r\n')
+

@@ -3,6 +3,8 @@ from util import json_response
 
 import data_handler
 
+import persistence
+
 app = Flask(__name__)
 
 
@@ -40,6 +42,12 @@ def main():
     with app.app_context():
         app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon/favicon.ico'))
 
+
+@app.route("/save")
+def save():
+
+    persistence.save_file()
+    return render_template('index.html')
 
 if __name__ == '__main__':
     main()
