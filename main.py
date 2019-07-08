@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for, redirect, request, session
 from util import json_response
 
 import data_handler, user
+import json
+from ast import literal_eval
 
 
 app = Flask(__name__)
@@ -88,5 +90,41 @@ def logout():
     return redirect('/')
 
 
+@app.route('/save/<type>', methods=['GET'])
+def save(type):
+    # print(type)
+    data_handler.save_csv(type)
+    return redirect('/')
+
+@app.route('/savedata', methods=['POST'])
+def savedata():
+    jsdata = request.data
+    datas = json.loads(jsdata.decode('utf8'))
+    # data = request.json()
+    newData = datas["statuses"][1]
+    print('xxxx', newData)
+    # data_handler.save_csv(type)x`
+
+    s = json.dumps(newData)
+    # variables2 = json.loads(s)
+    # assert (newData == variables2)
+
+
+    return s
+
+
+@app.route('/savedata', methods=['GET'])
+def savedataget():
+    jsdata = request.json()
+    # data = request.json()
+    print('xxxx', jsdata)
+    # data_handler.save_csv(type)
+    return jsdata
+
+
+
+
 if __name__ == '__main__':
     main()
+
+
