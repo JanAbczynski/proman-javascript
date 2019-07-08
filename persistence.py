@@ -53,9 +53,8 @@ def get_boards(force=False):
 def get_cards(force=False):
     return _get_data('cards', CARDS_FILE, force)
 
-def save_file():
-    with open('data/card.csv', 'a') as datafile:
-        for datas in _cache:
-            print(datas)
-            # datafile.write(','.join(album) + '\r\n')
-
+def save_file(type):
+    fields = ['first', 'second', 'third']
+    with open(r'data/'+type+'.csv', 'a') as datafile:
+        writer = csv.writer(datafile)
+        writer.writerow(fields)

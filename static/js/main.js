@@ -13,5 +13,6 @@ function init() {
 }
 
 init();
-dataHandler.init();
+
+
 
