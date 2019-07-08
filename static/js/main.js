@@ -1,5 +1,6 @@
 import { dom } from "./dom.js";
 import { dataHandler } from "./data_handler.js";
+import { sampleData } from "./sample_data.js"
 // This function is to initialize the application
 function init() {
     // init data
@@ -8,10 +9,11 @@ function init() {
     // loads the boards to the screen
 
     dom.loadBoards();
-
+    dom.loadCards();
+    console.log(typeof(sampleData))
 
 }
 
 init();
-dataHandler.init();
+
 

@@ -3,7 +3,7 @@
 
 let keyInLocalStorage = 'proman-data';
 
-let sampleData = {
+export let sampleData = {
     "statuses": [
         {
             "id": 1,
@@ -82,3 +82,7 @@ let sampleData = {
 
 localStorage.setItem(keyInLocalStorage, JSON.stringify(sampleData));
 
+function show_data() {
+    console.log(sampleData)
+
+}
