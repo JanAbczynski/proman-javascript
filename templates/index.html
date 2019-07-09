@@ -10,12 +10,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ProMan</title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css"/>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js' defer></script>
+
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
 
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/style.css">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
         <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -73,24 +77,31 @@
      <div class="col"><button id="c-board" class="btn btn-info btn-sm">Create new board</button></div>
 </div>
 
-<div class="row border-top border-primary">
+<div class="my_class row border-top border-primary">
     <div class="col-sm-3 text-left">Title of Board</div>
     <div class="col-sm-3 text-left"><button class="btn btn-info btn-sm" id="btn-card">+ New card</button></div>
     <div class="col-sm-6 text-right"><button id="btn-hide" class="btn btn-info btn-sm"></button></div>
 
 </div>
 <div id="to-hide">
-<div class="row border-top border-primary">
-      <div class="col text-center border-right border-primary new">New</div>
-      <div class="col text-center border-right border-primary">In progress</div>
-      <div class="col text-center border-right border-primary">Testing</div>
-      <div class="col text-center">Done</div>
-</div>
-<div class="row border-top border-primary">
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center"></div>
+<div class='wrapper'>
+    <div class='left my_container'>
+        <div>You can move these elements between these two containers</div>
+        <div>Moving them anywhere else isn't quite possible</div>
+    </div>
+    <div class='right my_container'>
+        <div>There's also the possibility of moving elements around in the same container, changing their position</div>
+        <div>This is the default use case. You only need to specify the containers you want to use</div>
+    </div>
+    <div class='left2 my_container'>
+        <div>You can move these elements between these two containers</div>
+        <div>Moving them anywhere else isn't quite possible</div>
+    </div>
+    <div class='right2 my_container'>
+        <div>There's also the possibility of moving elements around in the same container, changing their position</div>
+        <div>This is the default use case. You only need to specify the containers you want to use</div>
+    </div>
+    </div>
 </div>
 </div>
 </div>
