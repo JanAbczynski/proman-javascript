@@ -35,7 +35,7 @@ export let dataHandler = {
             .catch(error => console.error('Error:', error));
 
         dataHandler._api_post('/board/add', board, function (response) {
-            callback([response])
+            callback([response])})
 
     },
     init: function () {
@@ -44,7 +44,7 @@ export let dataHandler = {
         let li_data = document.getElementsByTagName('li');
         let arr = Array.from(li_data);
         console.log(dataHandler._data);
-        let new_data = dataHandler._data.push({id: "3", title: "Board 3"})
+        // let new_data = dataHandler._data.push({id: "3", title: "Board 3"})
         // this._api_get('/get-boards', (response) => {
         //     let string_data = JSON.stringify(response);
         //     console.log(string_data)});
