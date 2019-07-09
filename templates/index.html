@@ -67,101 +67,32 @@
         </div>
     </div>
 
-{#    klawisze#}
-    <div class="row">
-        <div style="height: 30px;" class="col-md-11" align="right">
-            <button id="new_board" class="btn-light">Create new board</button>
-        </div>
-    </div>
+<div class="container border border-primary">
+<div class="row ">
+    <div class="col" id="neon"><strong>Pro man</strong></div>
+     <div class="col"><button id="c-board" class="btn btn-info btn-sm">Create new board</button></div>
+</div>
 
-{#    tablica#}
-    <div class="row">
-{#        <div class="col-md-1">#}
-{#        </div>#}
-        <div class="col-md-12">
+<div class="row border-top border-primary">
+    <div class="col-sm-3 text-left">Title of Board</div>
+    <div class="col-sm-3 text-left"><button class="btn btn-info btn-sm" id="btn-card">+ New card</button></div>
+    <div class="col-sm-6 text-right"><button id="btn-hide" class="btn btn-info btn-sm"></button></div>
 
-{#    tabela tablicy#}
-            <div align="center">
-                <table class="table table-striped table-dark">
-                    <thead>
-                        <tr>
-                            <th colspan="3">
-                                <div align="left" >
-                                    Board title
-                                </div>
-                            </th>
-                            <th colspan="1">
-                                <div align="right">
-                                    <button class="btn-light">
-                                        Add new card
-                                    </button>
-                                    <button class="btn-light">
-                                        Hide
-                                    </button>
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td style="width: 25%;" align="center">
-                            New
-                        </td>
-                        <td style="width: 25%;" align="center">
-                            Inprogress
-                        </td>
-                        <td style="width: 25%;" align="center">
-                            Testing
-                        </td>
-                        <td style="width: 25%;" align="center">
-                            Dane
-                        </td>
-                    </tr>
-                    <tr>
-{#                    <tr  style="display:none;">#}
-                        <td>
-                            <div class="bg-secondary" align="center">
-                                <div style="height: 150px;">
-                                    CARD 1
-                                </div>
-                                <button class="btn-light">del</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="bg-info" align="center">
-                                <div style="height: 150px;" class="bg-danger">
-                                    CARD 2
-                                </div>
-                                <button class="btn-light">del</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="bg-secondary" align="center">
-                                <div style="height: 150px;">
-                                    CARD 3
-                                </div>
-                                <button class="btn-light">del</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="bg-secondary" align="center">
-                                <div style="height: 150px;">
-                                    CARD 4
-                                </div>
-                                <button class="btn-light">del</button>
-                            </div>
-                        </td>
-
-                    </tr>
-
-                </table>
-            </div>
-            <div>
-                qweqwe
-            </div>
-        </div>
-{#         <div class="col-md-1">#}
-{#        </div>#}
-    </div>
+</div>
+<div id="to-hide">
+<div class="row border-top border-primary">
+      <div class="col text-center border-right border-primary new">New</div>
+      <div class="col text-center border-right border-primary">In progress</div>
+      <div class="col text-center border-right border-primary">Testing</div>
+      <div class="col text-center">Done</div>
+</div>
+<div class="row border-top border-primary">
+      <div class="col text-center border-right border-primary">a</div>
+      <div class="col text-center border-right border-primary">a</div>
+      <div class="col text-center border-right border-primary">a</div>
+      <div class="col text-center"></div>
+</div>
+</div>
 </div>
 
 
@@ -170,13 +101,8 @@
 
 
 
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/new_js_file.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
