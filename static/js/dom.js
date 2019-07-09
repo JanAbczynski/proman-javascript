@@ -49,11 +49,11 @@ export let dom = {
             </ul>
         `;
 
-        this._appendToElement(document.querySelector('#boards'), outerHtml);
+        //this._appendToElement(document.querySelector('#boards'), outerHtml);
     },
 
     loadCards: function (boardId) {
-        let load = document.getElementById("saveCards");
+        // let load = document.getElementById("saveCards");
         let samData = sampleData;
         // let samData = { "name":"John", "age":30, "city":"New York"};
         // var samData={"name":"binchen"};
@@ -62,13 +62,13 @@ export let dom = {
         // let samData = [ "John", "Peter", "Sally", "Jane" ];
         // let jj = JSON.stringify(samData);
         // console.log(jj);
-        load.addEventListener("click", function () {
+        // load.addEventListener("click", function () {
             // let par = document.getElementById("xxx");
             // console.log(samData.boards[1].id);
             // par.innerHTML= samData.boards[1].id;
             // sendData(samData);
-            console.log(samData)
-        })
+            // console.log(samData)
+        // })
     },
     showCards: function (cards) {
              // shows the cards of a board
@@ -97,7 +97,7 @@ export let dom = {
 
 
 
-function sendData(samData){
+function sendData(samData) {
     console.log(samData)
     var dataexp = 4;
 
@@ -105,8 +105,6 @@ function sendData(samData){
 //     $.post( "/savedata", {
 //     javascript_data: dataexp
 // });
-
-
 
 
 //     $.ajax({
@@ -117,24 +115,48 @@ function sendData(samData){
 //     }
 // });
 
+    fetch('/save2', {
+                  method: 'POST', // or 'PUT'
+                  body: JSON.stringify(samData), // data can be `string` or {object}!
+                  headers:{
+                    'Content-Type': 'application/json'
+                  }
+                })
+        .then((fetch_result)=>{
+            console.log(samData);
+            return fetch_result;
+        })
+        .catch(()=> {})
 
-//     fetch('/savedata')  // set the path; the method is GET by default, but can be modified with a second parameter
-// .then((response) => response.json(samData))  // parse JSON format into JS object
-// .then((data) => {
-//     console.log(data);
-// })
-//
+    /*
+    fetch('/save2')  // set the path; the method is GET by default, but can be modified with a second parameter
+        .then((response) =>
+            response + "costam"
 
+        ).then((ro)=>
+        {
+            ro = ro + " costam2";
+            console.log(ro);
+            return ro;
+        })
+        */
 
-
-    var request = new XMLHttpRequest();  // instantiate a new Request
-    request.addEventListener('load', function () { // add an event listener to the load event of the request
-        let responseData = JSON.parse(this.response);  // parse JSON format into JS object
-        console.log('responseData: ', typeof(responseData));
-     });
-    request.open('POST', '/savedata');  // set the method and the path
-    request.send(JSON.stringify(samData));  // actually fire the Request
+    // parse JSON format into JS object
+        // .then((data) => {
+        //     console.log(data);
+        //f })
 }
+
+
+
+//     var request = new XMLHttpRequest();  // instantiate a new Request
+//     request.addEventListener('load', function () { // add an event listener to the load event of the request
+//         let responseData = JSON.parse(this.response);  // parse JSON format into JS object
+//         console.log('responseData: ', typeof(responseData));
+//      });
+//     request.open('POST', '/savedata');  // set the method and the path
+//     request.send(JSON.stringify(samData));  // actually fire the Request
+// }
 
 
 
