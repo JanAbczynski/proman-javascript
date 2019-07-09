@@ -90,16 +90,9 @@ def save(type):
 def savedata():
     jsdata = request.data
     datas = json.loads(jsdata.decode('utf8'))
-    # data = request.json()
     newData = datas["statuses"][1]
     print('xxxx', newData)
-    # data_handler.save_csv(type)x`
-
     s = json.dumps(newData)
-    # variables2 = json.loads(s)
-    # assert (newData == variables2)
-
-
     return s
 
 
@@ -110,6 +103,18 @@ def savedataget():
     print('xxxx', jsdata)
     # data_handler.save_csv(type)
     return jsdata
+
+
+@app.route('/save2', methods=['POST'])
+def save2():
+    print(request)
+    jsdata = request.data
+    datas = json.loads(jsdata.decode('utf8'))
+    newData = datas["statuses"][1]
+    print('xxxx', newData)
+    s = json.dumps(newData)
+    return s
+
 
 
 
