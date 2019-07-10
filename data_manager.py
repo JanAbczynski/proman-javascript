@@ -13,3 +13,10 @@ def get_user_by_username(cursor, username):
     return user
 
 
+
+
+
+@database_common.connection_handler
+def addCard(cursor, id, title, status):
+    return cursor.execute("""INSERT INTO card (board_id, title, status_id)
+VALUES (%s, %s, %s);""", (id, title, status))

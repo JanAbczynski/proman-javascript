@@ -53,46 +53,76 @@
 {#        <div align="right">xxx</div>#}
 {#        <div align="center">xxx</div>#}
 
-<div class="container">
-
-{#    menu#}
-    <div class="row">
-        <div class="col-md-6" align="left">
+<div class="container col-md-12">
+    <div id="nav" class="row">
+        <div class="col" align="left">
             PROMAN
         </div>
-        <div class="col-md-6" align="right">
+            <div class="col" align="right">
             <a class="nav-link" href="/login" style="display: inline">Login</a>
             <a class="nav-link" href="/registration" style="display: inline">Registration</a>
             <a class="nav-link"  href="/logout" style="display: inline">Logout</a>
         </div>
     </div>
 
-<div class="container border border-primary">
-<div class="row ">
-    <div class="col" id="neon"><strong>Pro man</strong></div>
-     <div class="col"><button id="c-board" class="btn btn-info btn-sm">Create new board</button></div>
-</div>
+    <div id="header" class="row" >
+         <div class="col-md-4" id="neon">
+             <strong>Pro man</strong>
+         </div>
+         <div class="col-md-8"><button id="c-board" class="btn btn-info btn-sm">
+             Create new board</button>
+         </div>
+    </div>
 
-<div class="row border-top border-primary">
-    <div class="col-sm-3 text-left">Title of Board</div>
-    <div class="col-sm-3 text-left"><button class="btn btn-info btn-sm" id="btn-card">+ New card</button></div>
-    <div class="col-sm-6 text-right"><button id="btn-hide" class="btn btn-info btn-sm"></button></div>
-
-</div>
-<div id="to-hide">
-<div class="row border-top border-primary">
-      <div class="col text-center border-right border-primary new">New</div>
-      <div class="col text-center border-right border-primary">In progress</div>
-      <div class="col text-center border-right border-primary">Testing</div>
-      <div class="col text-center">Done</div>
-</div>
-<div class="row border-top border-primary">
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center border-right border-primary">a</div>
-      <div class="col text-center"></div>
-</div>
-</div>
+    <div id="boardsList" class="col-md-12">
+        <div id="B001" class="col-md-10 border rounded-lg border-info">
+            <div id="boardHeader" class="row">
+                <div id="boardName" class="col-md-9 rounded-lg bg-info">
+                    NAME
+                </div>
+                <div id="buttons" class="col-md-2">
+                    <button class="btn btn-info btn-sm" id="newC001">+ New card</button>
+                    <button id="btn-hide" class="btn btn-info btn-sm"></button>
+                </div>
+            </div>
+            <div id="Statuses" class="row">
+                <div id="B001S1" class="col" align="center">
+                    <div class="col text-center">
+                        New
+                    </div>
+                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
+                        CARD 1
+                    </div>
+                </div>
+                <div id="B001S2" class="col" align="center">
+                    <div class="col text-center">
+                        New
+                    </div>
+                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
+                        CARD 1
+                    </div>
+                </div>
+                <div id="B001S3" class="col" align="center">
+                    <div class="col text-center">
+                        New
+                    </div>
+                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
+                        CARD 1
+                    </div>
+                </div>
+                <div id="B001S4" class="col" align="center">
+                    <div class="col text-center">
+                        New
+                    </div>
+                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
+                        <div>
+                            CARD 1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

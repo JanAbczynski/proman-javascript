@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 from util import json_response
 
-import data_handler, user
+import data_handler, user, data_manager
 import json
 from ast import literal_eval
 
@@ -124,6 +124,17 @@ def save2():
     print('xxxx', newData)
     s = json.dumps(newData)
     return s
+
+@app.route('/addCard', methods=['POST'])
+def addCard():
+    dataCaptured = request.data
+    dataCaptured = json.loads(dataCaptured.decode('utf8'))
+    id = dataCaptured['id']
+    title = dataCaptured['title']
+    status = dataCaptured['status']
+    data_manager.addCard(id, title, status)
+    print(id, title, status)
+
 
 
 

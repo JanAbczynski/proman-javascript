@@ -2,7 +2,8 @@
 import { dataHandler } from "./data_handler.js";
 import { sampleData} from "./sample_data.js";
 
-import { sampleData } from "./sample_data.js"
+// dragula([document.getElementById('left'), document.getElementById('right')]);
+
 export let dom = {
     _appendToElement: function (elementToExtend, textToAppend, prepend = false) {
         // function to append new DOM elements (represented by a string) to an existing DOM element
