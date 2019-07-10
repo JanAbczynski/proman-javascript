@@ -1,61 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-{#        <script src="/lib/jquery.plugin.js"></script>#}
-{#        <script src="/lib/jquery.min.js"></script>#}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProMan</title>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ProMan</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
 
-        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
-
-        <link rel="stylesheet" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-        <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    </head>
-    <body>
-{#        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">#}
-{#        <ul class="navbar-nav mr-auto">#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="/registration">Registration<span class="sr-only"></span></a>#}
-{#            </li>#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="/login">Login<span class="sr-only"></span></a>#}
-{#            </li>#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link"  href="/logout">Logout<span class="sr-only"></span></a>#}
-{#            </li>#}
-{#        </ul>#}
-{#            {% if session %}#}
-{#                <ul class="navbar-nav navbar-right"><li class="nav-item">Signed in as {{ session.username }}</li></ul>#}
-{#            {% endif %}#}
-{#        </nav>#}
-{#        <h1>ProMan</h1>#}
-{#        <div id="boards">Boards are loading...</div>#}
-{#        <button id="new_board">Create new board</button>#}
-{##}
-{#    <button href="/get-boards">load</button>#}
-{#    <button id="saveCards">save cards</button>#}
-{#    <button href="/save/boards">save cards</button>#}
-{#    <p id="xxx"></p>#}
-
-{#        <span align="left">xxx</span>#}
-{#        <div align="right">xxx</div>#}
-{#        <div align="center">xxx</div>#}
+</head>
+<body>
 
 <div class="col-md-12 container">
 
-{#    menu#}
+
     <div class="row">
         <div class="col-md-6" align="left">
             PROMAN
@@ -63,78 +35,31 @@
         <div class="col-md-6" align="right">
             <a class="nav-link" href="/login" style="display: inline">Login</a>
             <a class="nav-link" href="/registration" style="display: inline">Registration</a>
-            <a class="nav-link"  href="/logout" style="display: inline">Logout</a>
+            <a class="nav-link" href="/logout" style="display: inline">Logout</a>
         </div>
     </div>
 
-    <div id="header" class="row" >
-         <div class="col-md-4" id="neon">
-             <strong>Pro man</strong>
-         </div>
-         <div class="col-md-8"><button id="c-board" class="btn btn-info btn-sm">
-             Create new board</button>
-         </div>
+
+    <div id="header" class="row">
+        <div class="col-md-4" id="neon">
+            <strong>Pro man</strong>
+        </div>
+        <div class="col-md-8">
+            <button id="c-board" class="btn btn-info btn-sm">
+                Create new board
+            </button>
+        </div>
     </div>
+
 
     <div id="boardsList" class="col-md-12">
-        <div id="B001" class="col-md-10 border rounded-lg border-info">
-            <div id="boardHeader" class="row">
-                <div id="boardName" class="col-md-9 rounded-lg bg-info">
-                    NAME
-                </div>
-                <div id="buttons" class="col-md-2">
-                    <button class="btn btn-info btn-sm" id="newC001">+ New card</button>
-                    <button id="btn-hide" class="btn btn-info btn-sm"></button>
-                </div>
-            </div>
-            <div id="Statuses" class="row bg">
-                <div class="col" align="center">
-                    <div class="col text-center">
-                        New
-                    </div>
-                    <div id="1_new" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
-                        CARD 1
-                    </div>
-                </div>
-                <div class="col" align="center">
-                    <div class="col text-center">
-                        In Progres
-                    </div>
-                    <div id="1_inProgres" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
-                        CARD 1
-                    </div>
-                </div>
-                <div class="col" align="center">
-                    <div class="col text-center">
-                        Testing
-                    </div>
-                    <div id="1_testing" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
-                        CARD 1
-                    </div>
-                </div>
-                <div class="col" align="center">
-                    <div id="1_done" class="col text-center">
-                        Done
-                    </div>
-                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
-                        <div>
-                            CARD 1
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 </div>
 
 
-
-
-
-
-
-    <script src="{{ url_for('static', filename='js/new_js_file.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+<script src="{{ url_for('static', filename='js/new_js_file.js') }}" defer></script>
+</body>
 </html>
+
