@@ -144,8 +144,9 @@ const createNewId = function () {
 // let ButtonCreatingCardId = 'newC001';
 let ButtonCreatingCard = document.getElementById('newC001');
 ButtonCreatingCard.addEventListener('click', (e) => {
-    let newCardData = addCard();
-    createCard(newCardData);
+
+    createCard(randomNumber());
+
 });
 
 const addCard = function () {
@@ -162,19 +163,38 @@ const addCard = function () {
     return cardData
 };
 
-function createCard(object) {
+function createCard(number) {
     let newDiv = document.createElement('div');
     let mainDiv = document.getElementById('New');
-    newDiv.setAttribute('id', `C${object.id}`);
+    newDiv.setAttribute('id', number);
     newDiv.setAttribute('class', "col text-center rounded-lg bg-info");
-    newDiv.innerHTML = `
-                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">
-                        CARD 1
-                    </div>
-    `
     mainDiv.appendChild(newDiv);
+    newDiv.innerHTML = prompt('Please fill the card');
+
 
 }
+
+const randomNumber = function(){
+    let number = Math.floor(Math.random()* 200)
+    return number
+};
+
+console.log(randomNumber());
+
+
+// function editCard(){
+//     let theDiv = document.getElementById('C1');
+//     theDiv.addEventListener('click', ()=>{
+//         theDiv.innerHTML = prompt('Please fill the card')
+//     })
+// }
+
+
+
+
+
+
+
 
 ////////////////////// NEW CARD GENERATOR
 
