@@ -10,7 +10,7 @@ let btnHide = document.getElementById('btn-hide');
 let hideDiv = document.getElementById('to-hide');
 const createCard = function () {
     hideDiv.style.display === "block" ? hideDiv.style.display = "none" :
-hideDiv.style.display = "block";
+    hideDiv.style.display = "block";
 };
 btnHide.addEventListener('click', createCard);
 
@@ -38,7 +38,6 @@ function add_card() {
 }
 
 
-
 function send_data(cardData) {
     console.log(cardData);
     fetch('/addCard', {
@@ -55,3 +54,4 @@ function send_data(cardData) {
         .catch(() => {
         })
 }
+

@@ -44,9 +44,6 @@ def save_board(board_id: int):
     return data_handler.get_cards_for_board(board_id)
 
 
-
-
-
 def main():
     app.run(debug=True)
 
@@ -96,6 +93,7 @@ def save(type):
     data_handler.save_csv(type)
     return redirect('/')
 
+
 @app.route('/savedata', methods=['POST'])
 def savedata():
     jsdata = request.data
@@ -125,6 +123,7 @@ def save2():
     s = json.dumps(newData)
     return s
 
+
 @app.route('/addCard', methods=['POST'])
 def addCard():
     dataCaptured = request.data
@@ -134,10 +133,6 @@ def addCard():
     status = dataCaptured['status']
     data_manager.addCard(id, title, status)
     print(id, title, status)
-
-
-
-
 
 
 if __name__ == '__main__':
