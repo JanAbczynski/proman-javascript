@@ -1,8 +1,10 @@
-/////////////////////// DATA MENAGER IT MIGHT BE A DIFF JS FILE
+/////////////////////// DATA MANAGER IT MIGHT BE A DIFF JS FILE
 //////////////// TO FINSIH
 
-function send_data(cardData) {
-    console.log(cardData);
+let boards = {};
+
+function cardData(data) {
+    console.log(data);
     fetch('/addCard', {
         method: 'POST', // or 'PUT'
         body: JSON.stringify(cardData), // data can be `string` or {object}!
@@ -17,6 +19,27 @@ function send_data(cardData) {
         .catch(() => {
         })
 }
+
+function api_get(callback){
+    fetch('/get-boards')
+        .then((response) => response.json())
+        .then((data) => {
+            for(let i = 0;i<data.length;i++){
+                console.log(data[i])
+            }
+
+        })
+}
+api_get();
+
+
+
+const getBoards = function(callback){
+    this.api_get((response)=>{
+        this.data = response
+    })
+
+};
 
 
 
@@ -115,6 +138,7 @@ const toggleBoard = function (object) {
 
 let btnBoard = document.getElementById('c-board');
 btnBoard.addEventListener('click', (e)=>{
+
      //stworz nowy board
     let new_data = createEmptyBoard();
     createBoard(new_data);
@@ -141,6 +165,9 @@ const createNewId = function () {
     return 'newawswomeid'
 
 };
+
+
+
 
 
 
