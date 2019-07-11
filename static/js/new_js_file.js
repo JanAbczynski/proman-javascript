@@ -20,19 +20,23 @@ function cardData(data) {
         })
 }
 
-function api_get(callback){
-    fetch('/get-boards')
-        .then((response) => response.json())
-        .then((data) => {
+function getAndshowBoards(){
+    var boardPromise = fetch('/get-boards');
+        boardPromise.then(toJson).then(printData)
+}
+function toJson(response){
+            return response.json()
+}
+
+function printData(data){
             for(let i = 0;i<data.length;i++){
-                console.log(data[i])
+                createBoard(data[i])
             }
 
-        })
-}
-api_get();
+        }
 
 
+getAndshowBoards();
 
 const getBoards = function(callback){
     this.api_get((response)=>{
@@ -136,18 +140,21 @@ const toggleBoard = function (object) {
 
 
 
-let btnBoard = document.getElementById('c-board');
-btnBoard.addEventListener('click', (e)=>{
+let btnBoard = document.getElementById('c-board');btnBoard.addEventListener('click', (e)=> {
+    //wyswietl modal
 
-     //stworz nowy board
+    alert('siema');
+    //stworz nowy board
     let new_data = createEmptyBoard();
     createBoard(new_data);
     //wziac id boarda
     let newId = 'btn-hide' + new_data.id;
     //przypnij event do nowego boarda
     let toggleBoardBtn = document.getElementById(newId);
-    toggleBoardBtn.addEventListener('click', ()=>{
-        toggleBoard(new_data)})});
+    toggleBoardBtn.addEventListener('click', () => {
+        toggleBoard(new_data)
+    })
+});
 
 
 
@@ -193,3 +200,32 @@ const createNewId = function () {
 //
 //     send_data(cardData)
 // }
+
+
+
+var modal = document.getElementById('new_board_modal');
+
+function attachModalListeners(modalElm) {
+  modalElm.querySelector('.close_modal').addEventListener('click', toggleModal);
+  modalElm.querySelector('.overlay').addEventListener('click', toggleModal);
+}
+
+function detachModalListeners(modalElm) {
+  modalElm.querySelector('.close_modal').removeEventListener('click', toggleModal);
+  modalElm.querySelector('.overlay').removeEventListener('click', toggleModal);
+}
+
+function toggleModal() {
+  var currentState = modal.style.display;
+
+  // If modal is visible, hide it. Else, display it.
+  if (currentState === 'none') {
+    modal.style.display = 'block';
+    attachModalListeners(modal);
+  } else {
+    modal.style.display = 'none';
+    detachModalListeners(modal);
+  }
+}
+
+// btnBoard.addEventListener('click', toggleModal);
