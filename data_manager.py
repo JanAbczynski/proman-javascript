@@ -1,6 +1,6 @@
 import database_common
 
-
+# REGISTRATION
 @database_common.connection_handler
 def register_user(cursor, username, password):
     return cursor.execute("INSERT INTO person (username, password) VALUES (%s, %s)", (username, password))
@@ -12,8 +12,20 @@ def get_user_by_username(cursor, username):
     user = cursor.fetchone()
     return user
 
+#BOARDS
 
 
+@database_common.connection_handler
+def get_all_boards(cursor):
+    cursor.execute("""
+                    SELECT * 
+                    FROM board;
+                   """)
+    boards = cursor.fetchall()
+    return boards
+
+
+#CARDS
 
 
 @database_common.connection_handler
