@@ -29,6 +29,10 @@ div{
     padding: 5px;
 }
 
+.my_card{
+    margin: 5px;
+}
+
 #neon{
 font-size: 60px;
 font-family: 'Futura';

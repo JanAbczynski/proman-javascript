@@ -1,0 +1,1 @@
+dragula([document.getElementById('left'), document.getElementById('right'),  document.getElementById('right2'),  document.getElementById('left2')]);

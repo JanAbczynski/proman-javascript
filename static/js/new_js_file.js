@@ -1,3 +1,6 @@
+dragula([document.getElementById('New'), document.getElementById('InProgress'), document.getElementById('Testing'), document.getElementById('Done')]);
+
+
 /////////////////////// DATA MENAGER IT MIGHT BE A DIFF JS FILE
 //////////////// TO FINSIH
 
@@ -21,11 +24,11 @@ function send_data(cardData) {
 
 /////////////////////////////////////////////////// DRAGULA
 
-let board_len = document.getElementsByClassName('my_class').length;
+/*let board_len = document.getElementsByClassName('my_class').length;
 
 for (let i = 0; i < board_len; i++) {
     dragula([document.getElementsByClassName('left')[i], document.getElementsByClassName('right')[i], document.getElementsByClassName('right2')[i], document.getElementsByClassName('left2')[i]]);
-}
+}*/
 
 
 /////////////////////NEW BOARD GENERATOR
@@ -167,11 +170,9 @@ function createCard(number) {
     let newDiv = document.createElement('div');
     let mainDiv = document.getElementById('New');
     newDiv.setAttribute('id', number);
-    newDiv.setAttribute('class', "col text-center rounded-lg bg-info");
+    newDiv.setAttribute('class', "my_card text-center rounded-lg bg-info");
     mainDiv.appendChild(newDiv);
     newDiv.innerHTML = prompt('Please fill the card');
-
-
 }
 
 const randomNumber = function(){
