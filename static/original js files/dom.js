@@ -22,7 +22,7 @@ export let dom = {
     },
     init: function () {
         let btn = document.getElementById('new_board');
-        btn.addEventListener('click', dataHandler.createNewBoard);
+        // btn.addEventListener('click', dataHandler.createNewBoard);
         dom.loadCards()
     },
     loadBoards: function () {
