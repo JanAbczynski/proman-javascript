@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-6" align="left">
-            PROMAN
+            Manage your tasks easily
         </div>
         <div class="col-md-6" align="right">
             <a class="nav-link" href="/login" style="display: inline">Login</a>
@@ -52,11 +52,71 @@
 
 
     <div id="boardsList" class="col-md-12">
+        <div class="col-md-10 border rounded-lg border-info">
+        <div id="boardHeader" class="row">
+                <div id="boardName" class="col-md-9 rounded-lg bg-info">
+                    Tasks
+                </div>
+                <div id="buttons" class="col-md-2">
+                    <button class="btn btn-info btn-sm" id="newC001">+ New card</button>
+                    <button id="btn-hide" class="btn btn-info btn-sm"></button>
+                </div>
+            </div>
+       <div id="board-itself">
+                <div class="row border-top border-primary">
+                    <div class="col text-center border-right border-primary new">New</div>
+                    <div class="col text-center border-right border-primary">In progress</div>
+                    <div class="col text-center border-right border-primary">Testing</div>
+                    <div class="col text-center">Done</div>
+                </div>
+       </div>
+            <div id="board-main" class="row bg">
+
+                <div class="col" align="center">
+                    <div id="New" class="col text-center">
+
+                    </div>
+{#                    <div id="1_new" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        CARD 1#}
+{#                    </div>#}
+                </div>
 
 
+                <div class="col" align="center">
+                    <div id="InProgress" class="col text-center">
+
+                    </div>
+{#                    <div id="1_inProgress" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                       #}
+{#                    </div>#}
+                </div>
+
+
+                <div class="col" align="center">
+                    <div id="Testing" class="col text-center">
+
+                    </div>
+{#                    <div id="1_testing" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        CARD 1#}
+{#                    </div>#}
+                </div>
+
+
+                <div class="col" align="center">
+                    <div id="Done" class="col text-center">
+
+                    </div>
+{#                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        <div>#}
+{#                            CARD 1#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+
+
+            </div>
+        </div>
     </div>
-</div>
-
 
 <script src="{{ url_for('static', filename='js/new_js_file.js') }}" defer></script>
 </body>
