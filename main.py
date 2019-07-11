@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, jsonify
 from util import json_response
 
 import data_handler, user, data_manager
@@ -6,8 +6,12 @@ import json
 from ast import literal_eval
 
 
+
 app = Flask(__name__)
+
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+
 
 
 @app.route("/")
@@ -15,16 +19,21 @@ def index():
     """
     This is a one-pager which shows all the boards and cards
     """
+
     return render_template('index.html')
 
 
 @app.route("/get-boards")
-@json_response
 def get_boards():
     """
     All the boards
     """
-    return data_handler.get_boards()
+    boards = data_handler.get_boards()
+    json_boards = jsonify(boards)
+    print(json_boards)
+    return json_boards
+
+
 
 
 @app.route("/get-cards/<int:board_id>")
@@ -93,7 +102,6 @@ def save(type):
     data_handler.save_csv(type)
     return redirect('/')
 
-
 @app.route('/savedata', methods=['POST'])
 def savedata():
     jsdata = request.data
@@ -123,7 +131,6 @@ def save2():
     s = json.dumps(newData)
     return s
 
-
 @app.route('/addCard', methods=['POST'])
 def addCard():
     dataCaptured = request.data
@@ -133,6 +140,9 @@ def addCard():
     status = dataCaptured['status']
     data_manager.addCard(id, title, status)
     print(id, title, status)
+
+
+
 
 
 if __name__ == '__main__':
