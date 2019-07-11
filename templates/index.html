@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16"
           href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-6" align="left">
-            PROMAN
+            Manage your tasks easily
         </div>
         <div class="col-md-6" align="right">
             <a class="nav-link" href="/login" style="display: inline">Login</a>
@@ -52,56 +52,73 @@
 
 
     <div id="boardsList" class="col-md-12">
-
-
-    </div>
-</div>
-
-{#<div class="modal">#}
-{#    <div class="overlay"></div>#}
-{#    <div class="modal_content">#}
-{#        <!-- Dynamic Section -->#}
-{#        <h2>Hey Awesome Modal!</h2>#}
-{#        <p style="text-align: center;">#}
-{#            Cupcake ipsum dolor sit amet pie brownie. Carrot cake wafer I love pie bear claw. Sweet cake cheesecake#}
-{#            candy canes carrot cake marshmallow. Sweet roll I love sweet fruitcake donut chupa.#}
-{#        </p>#}
-{#        <!-- End of Dynamic Section -->#}
-{#        <button title="Close" class="close_modal">#}
-{#            <i class="fas fa-times"></i>#}
-{#        </button>#}
-{#    </div>#}
-{#</div>#}
-
-
-
-<div id="new_board_modal" class="modal fade modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content overlay">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Board's name</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        <div class="col-md-10 border rounded-lg border-info">
+        <div id="boardHeader" class="row">
+                <div id="boardName" class="col-md-9 rounded-lg bg-info">
+                    Tasks
+                </div>
+                <div id="buttons" class="col-md-2">
+                    <button class="btn btn-info btn-sm" id="newC001">+ New card</button>
+                    <button id="btn-hide" class="btn btn-info btn-sm"></button>
+                </div>
             </div>
-            <div class="modal-body">
-                <input type="text" id="inputBoardName" name="inputBoardName" class="form-control"
-                       placeholder="Boards name" required autofocus>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close_modal" data-dismiss="modal">Close</button>
-                <button id="save_btn" type="submit" class="btn btn-primary">Save changes</button>
+       <div id="board-itself">
+                <div class="row border-top border-primary">
+                    <div class="col text-center border-right border-primary new">New</div>
+                    <div class="col text-center border-right border-primary">In progress</div>
+                    <div class="col text-center border-right border-primary">Testing</div>
+                    <div class="col text-center">Done</div>
+                </div>
+       </div>
+            <div id="board-main" class="row bg">
+
+                <div class="col" align="center">
+                    <div id="New" class="col text-center">
+
+                    </div>
+{#                    <div id="1_new" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        CARD 1#}
+{#                    </div>#}
+                </div>
+
+
+                <div class="col" align="center">
+                    <div id="InProgress" class="col text-center">
+
+                    </div>
+{#                    <div id="1_inProgress" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                       #}
+{#                    </div>#}
+                </div>
+
+
+                <div class="col" align="center">
+                    <div id="Testing" class="col text-center">
+
+                    </div>
+{#                    <div id="1_testing" class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        CARD 1#}
+{#                    </div>#}
+                </div>
+
+
+                <div class="col" align="center">
+                    <div id="Done" class="col text-center">
+
+                    </div>
+{#                    <div class="col text-center rounded-lg bg-info"  style=" min-height: 80px;">#}
+{#                        <div>#}
+{#                            CARD 1#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+
+
             </div>
         </div>
     </div>
-</div>
-
-
-
-
 
 <script src="{{ url_for('static', filename='js/new_js_file.js') }}" defer></script>
 </body>
 </html>
-
 
